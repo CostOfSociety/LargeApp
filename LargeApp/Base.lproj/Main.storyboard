@@ -32,7 +32,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDr-Z6-98i">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDr-Z6-98i">
                                 <rect key="frame" x="137.66666666666666" y="386.66666666666669" width="100" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="xas-4u-NJ8"/>
@@ -82,6 +82,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="yDr-Z6-98i" id="SNh-hD-Fzx"/>
                         <outlet property="passwordTF" destination="1jC-XH-aPc" id="if7-gB-FDJ"/>
                         <outlet property="usernameTF" destination="j0d-y1-s4M" id="ExL-oB-Mjy"/>
                         <segue destination="XNp-d5-MAD" kind="presentation" identifier="goToWelcomeVC" modalPresentationStyle="fullScreen" id="pE5-Vk-aGA"/>

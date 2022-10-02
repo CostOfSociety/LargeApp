@@ -13,11 +13,17 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     private enum Utilit: String {
         case password = "Password"
     }
+    override func viewDidLoad() {
+        usernameTF.delegate = self
+        passwordTF.delegate = self
+    }
     
+
     @IBAction func loginButtonDidPressed() {
         guard let password = passwordTF.text else {return}
         if password == Utilit.password.rawValue  {
@@ -28,14 +34,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func foggotUsernameDidPressed() {
-        let alert = UIAlertController(title: "Oops", message: "Your name is User 😳", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Oops", message: "Your name is User or Any name 😳", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel)
         alert.addAction(alertAction)
         present(alert,animated: true,completion: nil)
     }
     
     @IBAction func foggotPasswordDidPressed() {
-        let alert = UIAlertController(title: "Oops", message: "Your name is Password 🤬", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Oops", message: "Your password is Password 🤬", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel)
         alert.addAction(alertAction)
         present(alert,animated: true,completion: nil)
@@ -45,6 +51,7 @@ class LoginViewController: UIViewController {
         guard let welcomeVC = segue.source as? WelcomeViewController else { return }
         usernameTF.text = welcomeVC.username
         passwordTF.text = ""
+        loginButton.isEnabled = false 
     }
     
     
@@ -70,3 +77,12 @@ class LoginViewController: UIViewController {
     
 }
 
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if usernameTF.text != "" && passwordTF.text != "" {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+        }
+    }
+}
