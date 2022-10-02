@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if usernameTF.text != "" && passwordTF.text != "" {
+        if passwordTF.text != "" {
             loginButton.isEnabled = true
         } else {
             loginButton.isEnabled = false

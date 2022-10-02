@@ -29,9 +29,8 @@ class WelcomeViewController: UIViewController {
     private func setupGradientLayer() {
         let gradientLayer = CAGradientLayer()
         let colorTop = UIColor.systemPink.cgColor
-        let colorMiddle = UIColor.purple.cgColor
-        let colorBottom = UIColor.blue.cgColor
-        gradientLayer.colors = [colorTop,colorMiddle, colorBottom]
+        let colorBottom = UIColor.purple.cgColor
+        gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0, 1]
         gradientLayer.frame = mainView.bounds
         mainView.layer.insertSublayer(gradientLayer, at: 0)
