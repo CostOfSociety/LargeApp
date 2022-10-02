@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
         guard let welcomeVC = segue.source as? WelcomeViewController else { return }
         usernameTF.text = welcomeVC.username
         passwordTF.text = ""
-        loginButton.isEnabled = false 
+        loginButton.isEnabled = false
     }
     
     
