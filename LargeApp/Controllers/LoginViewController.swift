@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
         case password = "Password"
     }
     override func viewDidLoad() {
-        usernameTF.delegate = self
         passwordTF.delegate = self
     }
     
